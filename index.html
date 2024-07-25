@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioMemory Challenge - Liceo 8</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+</head>
+<body>
+    <h1>BioMemory Challenge - Liceo 8</h1>
+    
+    <p>Nombre del jugador: <input type="text" id="playerName"></p>
+    <button onclick="startGame()">¡A jugar!</button>
+    
+    <p>Tiempo: <span id="time">0</span> segundos</p>
+    <p>Puntaje: <span id="score">0</span></p>
+    <p>Errores: <span id="errors">0</span></p>
+    <p>Nivel: <span id="level">1</span></p>
+    
+    <button onclick="showRanking()">Mostrar Ranking</button>
+    <button onclick="useHint()">Usar Pista</button>
+    <button onclick="toggleMusic()">Música On/Off</button>
+    <input type="range" min="0" max="1" step="0.1" value="0.5" onchange="setMusicVolume(this.value)">
+    
+    <div id="gameBoard"></div>
+    
+    <div id="rankingSection" style="display:none;">
+        <h2>Ranking de Jugadores</h2>
+        <table id="rankingTable">
+            <tr>
+                <th>Posición</th>
+                <th>Jugador</th>
+                <th>Puntaje</th>
+                <th>Tiempo</th>
+                <th>Errores</th>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="gameOverSection" style="display:none;">
+        <h2>¡Juego Terminado!</h2>
+        <button onclick="restartGame()">Volver a jugar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
